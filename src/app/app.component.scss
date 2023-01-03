@@ -8,3 +8,14 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    #main {
+        padding-top: 4rem;
+        margin-left: 0;
+        transition: 0.5s;
+        &.sidebarExpanded {
+            margin-left: 0;
+            transition: 0.5s;
+        }
+    }
+}

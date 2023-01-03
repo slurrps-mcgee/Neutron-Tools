@@ -1,5 +1,15 @@
 <!--Top Appbar-->
 <div id="appbar" class="p-1">
-  <a type="button"><h1 id="apptitle" class="mx-5" [routerLink]="['/home']">Neutron Tools</h1></a>
+  <!--Toggle Button for Sidebar-->
+  <button class="toggler border-none focus-none icon-light" (click)="handleSidebarToggle()"
+    [ngClass]="{ 'normal-toggle': isExpanded }">
+    <span class="toggler-icon"></span>
+  </button>
+
+  <a type="button">
+    <h1 id="apptitle" class="mx-5" [routerLink]="['/home']">Neutron Tools</h1>
+  </a>
 </div>
 
+<app-sidenav [isExpanded]="isExpanded" (toggleSidebar)="handleSidebarToggle()"></app-sidenav>
+<!--Handle Sidebar display-->

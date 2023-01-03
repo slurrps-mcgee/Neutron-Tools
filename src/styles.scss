@@ -1,24 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    /*Colors*/
-    --AlmostWhite: hsl(0, 0%, 98%);
-    --AlmostBlack: hsl(0, 0%, 8%);
-    --Blue: hsl(209, 41%, 48%);
-    --Dusk: hsl(297, 27%, 26%);
-    --Dawn: hsl(36, 100%, 64%);
-      
-    --MediumGray: hsl(0, 0%, 41%);
-    --Mint: hsl(135, 100%, 74%);
-    --Purple:hsl(246, 37%, 60%);
-    --Red: hsl(4, 100%, 67%);
-    
-    
-  }
-  
-  html, body {
-    height: 100vh;
-  }
- 
+  /*Colors*/
+  --AlmostWhite: hsl(0, 0%, 98%);
+  --AlmostBlack: hsl(0, 0%, 8%);
+  --Blue: hsl(209, 41%, 48%);
+  --Dusk: hsl(297, 27%, 26%);
+  --Dawn: hsl(36, 100%, 64%);
+
+  --MediumGray: hsl(0, 0%, 41%);
+  --Mint: hsl(135, 100%, 74%);
+  --Purple: hsl(246, 37%, 60%);
+  --Red: hsl(4, 100%, 67%);
+
+
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+/*Utilities*/
+.border-none {
+  border: none !important;
+}
+
+.focus-none {
+  box-shadow: none !important;
+}
+
+/*Navbar Button*/
+/*Toggler*/
+.toggler {
+  background-color: transparent;
+  border: .08em solid var(--AlmostBlack);
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  /*Center icon*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*Use to center icon*/
+
+  /*padding: .15rem;*/
+
+  /*Button Size*/
+  height: 3.5rem;
+  width: 3.5rem;
+
+  z-index: 9999;
+}
+
+.toggler:focus {
+  /*h-offset, v-offset, blur, spread, color*/
+  box-shadow: 0rem 0rem .2rem .2rem;
+}
+
+/*Icon Details*/
+.toggler-icon,
+.toggler-icon:before,
+.toggler-icon:after {
+  /*Default Color*/
+  background-color: var(--AlmostBlack);
+  border-radius: 0.5rem;
+  display: block;
+
+  /*Icon Size*/
+  width: 2em;
+  height: 0.15em;
+
+  /*Animation Transition*/
+  transition: 0.5s;
+  position: absolute;
+}
+
+/*Position relative to the main bar*/
+.toggler-icon:before,
+.toggler-icon:after {
+  content: "";
+  position: absolute;
+}
+
+/*Top*/
+.toggler-icon:before {
+  bottom: 0.7rem;
+}
+
+/*Bottom*/
+.toggler-icon:after {
+  top: 0.7rem;
+}
+
+/*////////////Color Options/////////////*/
+/*Default is dark*/
+
+/*Light*/
+.icon-light .toggler-icon,
+.icon-light .toggler-icon:before,
+.icon-light .toggler-icon:after {
+  background-color: var(--AlmostWhite);
+}
+
+.icon-light {
+  border-color: var(--AlmostWhite) !important;
+  color: var(--AlmostWhite) !important;
+}
+
+/*/////////Animations///////////////*/
+/*Added in JS to the control*/
+/*Regular animation*/
+.normal-toggle .toggler-icon {
+  background-color: transparent;
+}
+
+.normal-toggle .toggler-icon:before {
+  bottom: 0;
+  transform: rotate(-135deg);
+}
+
+.normal-toggle .toggler-icon:after {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+/*Bootstrap*/
+$primary: hsl(297, 27%, 26%);
+
 /* Importing Bootstrap SCSS file. */
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-icons/font/bootstrap-icons';

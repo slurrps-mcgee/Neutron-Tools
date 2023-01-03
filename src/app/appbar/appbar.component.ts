@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-appbar',
@@ -6,13 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./appbar.component.scss']
 })
 export class AppbarComponent {
-  // Step 1:
-	// Create a property to track whether the menu is open.
-	// Start with the menu collapsed so that it does not
-	// appear initially when the page loads on a small screen!
-	sidebarExpanded = false;
+  @Input() isExpanded: boolean = false;
 
-  toggle(): void {
-    this.sidebarExpanded = !this.sidebarExpanded;
-  } 
+  @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  handleSidebarToggle() {
+    this.isExpanded = !this.isExpanded;
+    this.toggleSidebar.emit(this.isExpanded);
+  };
 }
