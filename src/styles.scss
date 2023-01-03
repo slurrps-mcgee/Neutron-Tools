@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    /*Colors*/
+    --AlmostWhite: hsl(0, 0%, 98%);
+    --AlmostBlack: hsl(0, 0%, 8%);
+    --Blue: hsl(209, 41%, 48%);
+    --Dusk: hsl(297, 27%, 26%);
+    --Dawn: hsl(36, 100%, 64%);
+      
+    --MediumGray: hsl(0, 0%, 41%);
+    --Mint: hsl(135, 100%, 74%);
+    --Purple:hsl(246, 37%, 60%);
+    --Red: hsl(4, 100%, 67%);
+    
+    
+  }
+  
+  html, body {
+    height: 100vh;
+  }
+ 
+/* Importing Bootstrap SCSS file. */
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons';

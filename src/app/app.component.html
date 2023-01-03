@@ -1,0 +1,6 @@
+<app-appbar></app-appbar>
+<app-sidenav [isExpanded]="sidebarExpanded" (toggleSidebar)="sidebarExpanded = !sidebarExpanded"></app-sidenav>
+
+<div id="main" [ngClass]="{ 'sidebarExpanded': sidebarExpanded }">
+  <router-outlet></router-outlet>
+</div>

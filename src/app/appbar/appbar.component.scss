@@ -1,0 +1,10 @@
+#appbar {
+  position: fixed;
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  background-color: var(--Dusk);
+  color: var(--AlmostWhite);
+  width: 100%;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+}
