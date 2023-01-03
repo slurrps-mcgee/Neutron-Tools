@@ -10,12 +10,21 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export class SidenavComponent {
   @Input() isExpanded: boolean = false; //Used to handle sidebar expansion
+  @Input() appbar: boolean = false; //Optional to determine if an appbar is included
+
   @Output() toggleSidebar: EventEmitter<boolean> = new EventEmitter<boolean>(); //outputs value when sidebar toggle boolean
 
   //Handles sidebar expansion toggle
   handleSidebarToggle() {
-    //Will only run when sidebar is already expanded
-    if(this.isExpanded === true) {
+    //Check if there is an appbar
+    if (this.appbar) {
+      //Will only run when sidebar is already expanded
+      if (this.isExpanded === true) {
+        this.isExpanded = !this.isExpanded;
+        this.toggleSidebar.emit(this.isExpanded);
+      }
+    }
+    else {
       this.isExpanded = !this.isExpanded;
       this.toggleSidebar.emit(this.isExpanded);
     }

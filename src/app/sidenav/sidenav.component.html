@@ -1,9 +1,10 @@
 <!--Side Navigation Menu-->
 <nav class="sidenav" [ngClass]="{ 'expanded': isExpanded }">
-  <!--Optional Toggle Button for Sidebar-->
-  <!-- <button class="toggler border-none focus-none icon-light" (click)="handleSidebarToggle()" [ngClass]="{ 'normal-toggle': isExpanded }">
-  <span class="toggler-icon"></span>
-</button> -->
+  <!--Optional Toggle Button for Sidebar only if there is no appbar-->
+  <button class="toggler border-none focus-none icon-light" *ngIf="!appbar" (click)="handleSidebarToggle()"
+    [ngClass]="{ 'normal-toggle': isExpanded }">
+    <span class="toggler-icon"></span>
+  </button>
 
   <ul class="navlist">
     <li class="nav-item"> <!--Nav Item-->
@@ -33,8 +34,8 @@
         <h3><i class="bi bi-link"></i></h3>
         <h6 class="label">Useful Links</h6>
       </a>
-    </li> -->
-    <hr class="w-75">
+    </li>
+    <hr class="w-75"> -->
     <li class="nav-item">
       <a class="nav-link" [routerLink]="['/passwordgenerator']" (click)="handleSidebarToggle()"
         [routerLinkActive]="'active'">

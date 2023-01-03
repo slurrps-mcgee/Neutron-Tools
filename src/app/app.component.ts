@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   sidebarExpanded = false;
+  toggleMenu = () => this.sidebarExpanded = !this.sidebarExpanded;
+  
 }
