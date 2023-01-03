@@ -1,0 +1,3 @@
+For github pages the basehref inside angular.json file should be set to the github repository title
+
+If not inside github and is normally hosted you will simply need to upload the files inside the docs folder and set the basehref to / 
